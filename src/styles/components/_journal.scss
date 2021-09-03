@@ -16,6 +16,7 @@
 .journal__sidebar-navbar{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .journal__sidebar-navbar h3{
@@ -53,6 +54,7 @@
     border-radius: 4px;
     color: $dark-gray;
     display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
     overflow: hidden;
 
@@ -70,12 +72,19 @@
 
 .journal__entry-body{
     padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .journal__entry-title{
     font-size: 14px;
     font-weight: bold;
+    width: 15vh;
 }
+
+.overflow-ellipsis {
+    text-overflow: ellipsis;
+  }
 
 .journal__entry-text{
     font-size: 10px;

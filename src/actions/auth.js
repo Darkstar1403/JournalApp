@@ -55,8 +55,8 @@ export const startGoogleLogin = () =>{
         signInWithPopup(auth, googleAuthProvider)
             .then(({user}) =>{
                 dispatch(login(user.uid, user.displayName))
-                dispatch(finishLoading());
-            });
+            }).catch(e => console.log(e));
+            dispatch(finishLoading());
         
     }
 }
