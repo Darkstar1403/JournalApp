@@ -14,7 +14,7 @@ export const JournalEntry = ({id, body, title, date, url}) => {
     }
 
     return (
-        <div className='journal__entry' onClick={handleEntryClick}>
+        <div className='journal__entry animate__animated animate__fadeInDown animate__faster' onClick={handleEntryClick}>
             <div className='journal__entry-picture' style={{backgroundSize: 'cover', backgroundImage: ((url)?`url(${url})`:`url(${urlDefault})`)}}>
             </div>
             <div className='journal__entry-body'>

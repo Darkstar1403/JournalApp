@@ -1,4 +1,4 @@
-import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
+import { addDoc, collection, updateDoc, doc, deleteDoc } from "firebase/firestore";
 import Swal from "sweetalert2";
 import { db } from "../components/firebase/firebase-config";
 import { fileUpload } from "../helpers/fileUpload";
@@ -16,7 +16,8 @@ export const startNewNote = () =>{
             }
             
             const docRef = await addDoc(collection(db, `${uid}/journal/notes`),newNote);
-            dispatch(activeNote(docRef.id, newNote))
+            dispatch(activeNote(docRef.id, newNote));
+            dispatch(addNewNotes(docRef.id, newNote));
         }
         catch(error){
             Swal.fire('Error', 'new note failed', 'error');
@@ -32,6 +33,14 @@ export const activeNote = (id, note) => ({
         ...note
     }
 });
+
+export const addNewNotes = (id, note) =>({
+    type:types.notesAddNew,
+    payload:{
+        id,
+        ...note
+    }
+})
 
 export const startLoadingNotes = (uid) =>{
     return async(dispatch) =>{
@@ -103,3 +112,28 @@ export const startUploading = (file) =>{
         Swal.close();
     }
 }
+
+export const startDeleting = (id) =>{
+    return async(dispatch, getState) =>{
+        try{
+            const {uid} = getState().auth;
+            const refDoc = doc(db, `/${uid}/journal/notes/${id}`);
+            await deleteDoc(refDoc);
+            dispatch(deleteNote(id));
+            Swal.fire('Deleted', 'Deleted succesfully', 'success')
+        }
+        catch(error){
+            Swal.fire('Error', 'Deleting note failed', 'error');
+        }
+
+    }
+}
+
+export const deleteNote = (id) => ({
+    type: types.notesDelete,
+    payload: id
+});
+
+export const noteLogout = () =>({
+    type:types.notesLogout
+});

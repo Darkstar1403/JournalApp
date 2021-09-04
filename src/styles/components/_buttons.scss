@@ -30,6 +30,16 @@
     }
 }
 
+.btn-danger{
+    background-color: darkred;
+
+    transition: background-color .3s ease;
+
+    &:hover{
+        background-color: darken($color: darkred, $amount: 10);
+    }
+}
+
 .btn-block{
     width: 100%;
 }
@@ -78,3 +88,4 @@
 .btn-logout{
     height: 5vh;
 }
+

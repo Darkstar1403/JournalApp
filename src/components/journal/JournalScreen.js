@@ -9,9 +9,12 @@ export const JournalScreen = () => {
   const {active} = useSelector(state => state.notes);
 
   return (
-    <div className='journal__main-content'>
+    <div className='container-sm-fluid journal__main-content animate__animated animate__fadeIn animate__faster'>
       <Sidebar/>
-      <main> { (active) ? (<NoteScreen/>) : (<NothingSelected/>) } </main>
+      <main> 
+        { (active) ? (<NoteScreen/>) : (<NothingSelected/>) }   
+        <a class="btn-floating" id="menu-btn" ><i class="fa-solid fa-bars"></i></a> 
+      </main>
     </div>
   );
 };
