@@ -6,8 +6,15 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    width: 100%;
 
     p{
         text-align: center;
     }
 }
+
+@media (min-width: 576px) { 
+    .nothing__main-content{
+        width: auto;
+    }
+ }

@@ -17,13 +17,13 @@ export const Sidebar = () => {
     }
     return (
         
-        <aside className='journal__sidebar animate__animated animate__fadeInLeft'>
+        <aside className='journal__sidebar '>
             <div className='journal__sidebar-navbar'>
                 <h3 className='mt-5'> 
                     <i className='far fa-moon'></i>
                     <span> {name}</span>
                 </h3>
-                <button className='btn' onClick={handleLogout}>
+                <button className='btn btn-logout' onClick={handleLogout}>
                     Logout
                 </button>
             </div>

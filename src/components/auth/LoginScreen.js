@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { startGoogleLogin, startLoginEmailPassword } from "../../actions/auth";
-import { removeError, setError } from "../../actions/ui";
+import { removeError } from "../../actions/ui";
 import { useForm } from "../../hooks/useForm";
 
 export const LoginScreen = () => {
@@ -12,7 +12,7 @@ export const LoginScreen = () => {
 
   const dispatch = useDispatch();
 
-  const [formValues, handleInputChange] = useForm({email: 'branco@gmail.com', password: '123456'})
+  const [formValues, handleInputChange] = useForm({email: '', password: ''})
 
   const {email, password} = formValues;
 
