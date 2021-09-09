@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests of <NoteScreem/> should be render correctly 1`] = `
+<div
+  className="notes__main-content"
+>
+  <div
+    className="notes__appbar"
+  >
+    <span>
+      September 8th 2021
+    </span>
+    <input
+      id="fileSelector"
+      name="file"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file"
+    />
+    <div>
+      <button
+        className="btn"
+        onClick={[Function]}
+      >
+        <i
+          class="fas fa-camera fa-lg"
+        />
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+      >
+        Save
+      </button>
+    </div>
+  </div>
+  <div
+    className="notes__content animate__animated animate__bounceIn"
+  >
+    <input
+      autoComplete="off"
+      className="notes__title-input"
+      name="title"
+      onChange={[Function]}
+      placeholder="Some awesome title"
+      type="text"
+      value="Hola"
+    />
+    <textarea
+      className="notes__textarea"
+      name="body"
+      onChange={[Function]}
+      placeholder="What happened today?"
+      value="Mundo"
+    />
+    <div
+      className="notes__image"
+    >
+      <img />
+    </div>
+  </div>
+  <button
+    className="btn btn-danger"
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</div>
+`;
